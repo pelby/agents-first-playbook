@@ -76,7 +76,7 @@ The workspace-level `AGENTS.md` gives agents enough context to route work across
 
 Agent instructions often contain sensitive operational context: private names, client details, local paths, tool inventories, memories, contact details, and workflow assumptions.
 
-Use this repo as a pattern, not as a place to paste a live config. Before sharing anything publicly, replace private details with placeholders and keep runtime files, logs, auth state, and memories out of the repo.
+When adapting this pattern for your own setup, start from the templates rather than publishing a copy of your live config. If you share a fork, derivative repo, gist, or internal guide, replace private details with placeholders and keep runtime files, logs, auth state, and memories out of it.
 
 ## Status
 
