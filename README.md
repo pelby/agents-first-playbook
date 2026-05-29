@@ -72,11 +72,11 @@ The inspector reports files, symlinks, likely conflicts, and broken links. It do
 
 The workspace-level `AGENTS.md` gives agents enough context to route work across multiple projects without duplicating instructions in every repo.
 
-## Public safety rule
+## Public safety
 
-Never publish your real personal agent config directly. Treat it like an operating manual for your life and work.
+Agent instructions often contain sensitive operational context: private names, client details, local paths, tool inventories, memories, contact details, and workflow assumptions.
 
-Use this repo as a pattern. Replace all private names, client details, paths, tool inventories, memories, and contact details with placeholders before sharing anything publicly.
+Use this repo as a pattern, not as a place to paste a live config. Before sharing anything publicly, replace private details with placeholders and keep runtime files, logs, auth state, and memories out of the repo.
 
 ## Status
 
