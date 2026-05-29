@@ -143,5 +143,16 @@ for path in \
   fi
 done
 
+section "Automation surfaces to review"
+report_path "$HOME_DIR/Library/LaunchAgents" "macOS user LaunchAgents"
+report_path "/Library/LaunchAgents" "macOS system LaunchAgents"
+report_path "/Library/LaunchDaemons" "macOS system LaunchDaemons"
+report_path "$HOME_DIR/bin" "user bin directory"
+report_path "$HOME_DIR/.local/bin" "user local bin directory"
+report_path "$HOME_DIR/.config/systemd/user" "systemd user units"
+report_path "$HOME_DIR/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Startup" "Windows startup folder"
+echo "NOTE cron, systemd timers, Windows Task Scheduler jobs, and app-managed launch jobs may require platform-specific read-only inspection."
+echo "NOTE review job definitions manually; this script does not print scheduled job contents."
+
 section "Done"
 echo "Inspection complete. No files were modified."

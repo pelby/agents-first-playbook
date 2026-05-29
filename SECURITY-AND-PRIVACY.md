@@ -13,6 +13,7 @@ Your agent config may be more sensitive than normal project documentation. It ca
 - agent memories, transcripts, logs, or conversation summaries
 - local allow-lists, permissions, or security warnings
 - personal routing rules for private vaults or folders
+- LaunchAgents, cron jobs, systemd timers, Windows scheduled tasks, or helper scripts with real commands, schedules, private paths, or machine-specific details
 
 ## Safe public examples
 
@@ -56,3 +57,5 @@ This scan is not enough on its own. It is a backstop before a human review.
 ## Public repo policy
 
 This repo intentionally does not include an automatic migration script. A script that rewires global agent config can break someone else's setup. The v1 tool only inspects and reports.
+
+For automations, publish guidance and placeholders only. Do not publish live job definitions or scripts unless they have been deliberately cleaned of private paths, schedules, credentials, repo names, and personal workflow details.

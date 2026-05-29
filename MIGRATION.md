@@ -30,6 +30,7 @@ Capture:
 - tool runtime folders
 - private memories and logs
 - scripts that hardcode `.claude`, `.codex`, or another tool folder
+- local automation surfaces such as launch jobs, cron, timers, scheduled tasks, hooks, and helper scripts
 
 ## Phase 1: Classify
 
@@ -42,6 +43,29 @@ Classify each item:
 | Tool adapter | `CLAUDE.md`, `GEMINI.md` wrapper | keep thin and tool-specific |
 | Tool runtime | sessions, logs, auth, settings | keep in tool folder |
 | Review manually | hooks, commands, generated scripts | inspect before moving |
+
+## Automation and scheduled jobs
+
+An AGENTS-first migration should include local automation surfaces, not just instruction files.
+
+Inventory anything that can run without you typing the command directly:
+
+- macOS LaunchAgents and LaunchDaemons
+- scripts called by launch jobs
+- cron jobs
+- systemd user timers and services
+- Windows Task Scheduler jobs
+- shell utilities in locations such as `~/bin` or `~/.local/bin`
+- agent hooks or helper scripts that run on triggers
+
+For each automation, identify:
+
+- what triggers it
+- what command or script it runs
+- whether the script depends on `.claude`, `.codex`, `.agents`, or a project path
+- whether it is shared durable user config, tool-specific runtime, third-party/app-managed, or private/sensitive
+
+Keep real personal automations in a private config repo if they are worth tracking. Public repos should contain only generic templates, checklists, and placeholder examples.
 
 ## Phase 2: Decide the canonical direction
 

@@ -55,6 +55,7 @@ assert_contains "$claude_first_out" "HINT Codex global instructions point throug
 
 make_base agents-first
 mkdir -p "$home/.agents" "$home/.claude" "$home/.codex"
+mkdir -p "$home/Library/LaunchAgents" "$home/bin"
 printf '%s\n' "# Agents" > "$home/.agents/AGENTS.md"
 ln -s ../.agents/AGENTS.md "$home/.claude/CLAUDE.md"
 ln -s ../.agents/AGENTS.md "$home/.codex/AGENTS.md"
@@ -64,6 +65,9 @@ agents_first_out="$(run_scenario agents-first)"
 assert_contains "$agents_first_out" "OK file neutral global AGENTS.md"
 assert_contains "$agents_first_out" "OK symlink Claude global CLAUDE.md"
 assert_contains "$agents_first_out" "No obvious real-file adapter conflicts found"
+assert_contains "$agents_first_out" "OK directory macOS user LaunchAgents"
+assert_contains "$agents_first_out" "OK directory user bin directory"
+assert_contains "$agents_first_out" "this script does not print scheduled job contents"
 
 make_base broken-symlink
 mkdir -p "$home/.claude"
