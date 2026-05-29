@@ -48,6 +48,8 @@ If you are setting up from scratch, read [`GREENFIELD.md`](GREENFIELD.md).
 
 If you already have `.claude`, `.codex`, `CLAUDE.md`, `AGENTS.md`, or mixed symlinks, read [`MIGRATION.md`](MIGRATION.md).
 
+If you plan to publish or share your adapted setup, read [`SECURITY-AND-PRIVACY.md`](SECURITY-AND-PRIVACY.md) first.
+
 If you want an agent to help, use the prompts in [`prompts/`](prompts/) and the optional skill in [`skills/agents-first-setup/`](skills/agents-first-setup/).
 
 Before changing anything, run the read-only inspector:
@@ -71,12 +73,6 @@ The inspector reports files, symlinks, likely conflicts, and broken links. It do
 ```
 
 The workspace-level `AGENTS.md` gives agents enough context to route work across multiple projects without duplicating instructions in every repo.
-
-## Public safety
-
-Agent instructions often contain sensitive operational context: private names, client details, local paths, tool inventories, memories, contact details, and workflow assumptions.
-
-When adapting this pattern for your own setup, start from the templates rather than publishing a copy of your live config. If you share a fork, derivative repo, gist, or internal guide, replace private details with placeholders and keep runtime files, logs, auth state, and memories out of it.
 
 ## Status
 
